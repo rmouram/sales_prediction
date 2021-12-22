@@ -4,7 +4,6 @@ backcall==0.2.0
 bleach==4.1.0
 Boruta==0.3
 cffi==1.15.0
-colorama==0.4.4
 cycler==0.11.0
 debugpy==1.5.1
 decorator==5.1.0
@@ -32,7 +31,9 @@ jupyter-latex-envs==1.4.6
 jupyter-nbextensions-configurator==0.4.1
 jupyterlab-pygments==0.1.2
 jupyterlab-widgets==1.0.2
+jupyterthemes==0.20.0
 kiwisolver==1.3.2
+lesscpy==0.15.0
 lxml==4.7.1
 MarkupSafe==2.0.1
 matplotlib==3.5.0
@@ -51,6 +52,7 @@ parso==0.8.3
 pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==8.4.0
+ply==3.11
 prometheus-client==0.12.0
 prompt-toolkit==3.0.23
 ptyprocess==0.7.0
@@ -60,8 +62,6 @@ pyparsing==3.0.6
 pyrsistent==0.18.0
 python-dateutil==2.8.2
 pytz==2021.3
-pywin32==303
-pywinpty==1.1.6
 PyYAML==6.0
 pyzmq==22.3.0
 qtconsole==5.2.1
@@ -72,6 +72,7 @@ seaborn==0.11.2
 Send2Trash==1.8.0
 setuptools-scm==6.3.2
 six==1.16.0
+sklearn==0.0
 terminado==0.12.1
 testpath==0.5.0
 threadpoolctl==3.0.0
