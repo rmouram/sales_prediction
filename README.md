@@ -1,6 +1,6 @@
 # sales_prediction
 
-🏗️ ESTE É UM PROJETO EM CONSTRUÇÃO 🏗️
+🏗️ ESTE É UM PROJETO EM CONSTRUÇÃO 🏗️ Projeto de Regressão
 
 <p> [X] Obtenção dos dados </p>
 <p> [X] Feature Engineering </p>
