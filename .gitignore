@@ -3,3 +3,6 @@
 /model
 .ipynb_checkpoints
 .gitignore
+/parameter
+/webapp
+
