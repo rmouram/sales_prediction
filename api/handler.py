@@ -3,7 +3,8 @@ import pandas as pd
 from flask           import Flask, request, Response
 from rossmann.Rossmann import Rossmann
 
-model = pickle.load(open('/home/romulo/Documentos/dsprod/sales_prediction/model/model_rossman_xgb_v01.pkl', 'rb'))
+path = '/home/romulo/Documentos/dsprod'
+model = pickle.load(open(path + '/sales_prediction/model/model_rossman_xgb_v01.pkl', 'rb'))
 
 app = Flask(__name__)
 
