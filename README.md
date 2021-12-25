@@ -52,10 +52,7 @@
 <p>https://github.com/rmouram</p>
 <p>Rômulo Ferreira</p>
 <p>ferreira.moura.maia@gmail.com</p>
-<<<<<<< HEAD
 
-=======
->>>>>>> f51ff0881757dd8e43c3120db49cc3d7cf4d517e
 ## Licença
 
 
