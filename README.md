@@ -29,14 +29,29 @@
 ## Como instalar
  1. Crie um ambiente virtual para separar as dependências que serão instaladas.
  2. Faça o clone para o diretório desejado.
- 3. Em um terminal e com o ambiente virtual ativado faça: pip install requirements.txt
- 4. Digite jupyter-notebook no terminal.
- 5. Ao entrar no arquivo v1.0_store_sales_prediction.ipynb vá em Cell e clique em Run All na aba superior do jupyter.
- 6. Após isso poderá demorar horas para concluir devido aos treinamentos de ML e o fine tuning.
+ 3. Em um terminal e com o ambiente virtual ativado faça: pip install requirements.txt.
+ 4. Em um terminal digite: mkdir model, isso criará uma pasta para o modelo ser salvo.
+ 5. Digite jupyter-notebook no terminal.
+ 6. Ao entrar no arquivo v1.0_store_sales_prediction.ipynb vá em Cell e clique em Run All na aba superior do jupyter.
+ 7. Após isso poderá demorar horas para concluir devido aos treinamentos de ML e o fine tuning.
+
+## Como testar o modelo offline (Versao online com Heroku ainda nao disponível)
+ 1. É nessário entrar na pasta api e modificar o arquivo handler.py:
+  1.1 Troque o caminho na variável 'path' pelo caminho do seu computador até a pasta sales_prediction.
+ 2. Então em um terminal digite: python handler.py para iniciar o servidor.
+ 3. Vá na seção 10.3 API Tester clique no codigo e aprte ctrl + Enter para rodar o codigo.
+ 4. Caso queira mudar as lojas observadas basta alterar a variável 'list_stores'.
+ 5. Caso queira verificar as previsões de uma loja específica por dia, na célula abaixo basta alterar a variável 'store' com o 
+    valor da loja desejado e rodar com ctrl + Enter. Será mostrado um dataframe, a previsão está em uma coluna 'prediction' ao fim do dataframe.
+
+## Estado do projeto
+<p> Estou tendo problemas com o Heroku por isso ainda não é possível testar o projeto sem precisar fazer um clone e gerar o modelo manualmente.</p>
+<p> Em breve quando solucionar os problemas também haverá um bot no telegram para facilitar o acesso.</p>
 
 ## Autor
-https://github.com/rmouram
-Rômulo Ferreira
+<p>https://github.com/rmouram</p>
+<p>Rômulo Ferreira</p>
+<p>ferreira.moura.maia@gmail.com</p>
 ## Licença
 
 
