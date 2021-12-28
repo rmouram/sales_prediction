@@ -1,6 +1,5 @@
 .csv
 /img
-/model
 .ipynb_checkpoints
 .gitignore
 /parameter
