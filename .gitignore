@@ -4,4 +4,5 @@
 .gitignore
 /parameter
 /webapp
+model/model_rossman_xgb_v01.pkl
 
