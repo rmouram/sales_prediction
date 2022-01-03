@@ -2,17 +2,26 @@ import requests
 import json
 import pandas as pd
 from flask import Flask, request, Response
+import my_infos
 
+# get Me
+# https://api.telegram.org/bot5081207436:AAHp6KaPzBu568jzhTdMIxpSBz_krWkX8VU/getMe
+
+# get Updates
+# https://api.telegram.org/bot5081207436:AAHp6KaPzBu568jzhTdMIxpSBz_krWkX8VU/getUpdates
+
+# send Message
+# https://api.telegram.org/bot5081207436:AAHp6KaPzBu568jzhTdMIxpSBz_krWkX8VU/sendMessage?chat_id=91002850&text=ola eu sou um bot
 
 # webhook
-# https://api.telegram.org/bot5085784292:AAGGYbfvb7Shl-ntyj4ABTMJN0oJo_jcKu8/setWebhook?url=https://97c954e8e79429.lhr.life
+# https://api.telegram.org/bot5081207436:AAHp6KaPzBu568jzhTdMIxpSBz_krWkX8VU/setWebhook?url=https://ca21fcdcf74df3.lhr.life
 
-TOKEN = '5085784292:AAGGYbfvb7Shl-ntyj4ABTMJN0oJo_jcKu8'
+
+TOKEN = my_infos.TOKEN
 
 def send_message(chat_id, text):
     url = 'https://api.telegram.org/bot{}'.format(TOKEN)
-    url = url + 'sendMessage?chat_id={}'.format(chat_id)
-
+    url = url + '/sendMessage?chat_id={}'.format(chat_id)
     r = requests.post(url, json={'text':text})
     print('Status Code {}'.format(r.status_code))
 
@@ -21,17 +30,14 @@ def send_message(chat_id, text):
 
 def load_dataset(store_id):
     # loading dataset
-    df10 = pd.read_csv('rossmann-store-sales/test.csv')
-    df_store_raww = pd.read_csv('rossmann-store-sales/store.csv', low_memory=False)
+    df10 = pd.read_csv('/home/romulo/Documentos/dsprod/sales_prediction/rossmann-store-sales/test.csv')
+    df_store_raww = pd.read_csv('/home/romulo/Documentos/dsprod/sales_prediction/rossmann-store-sales/store.csv', low_memory=False)
 
     # merge test dataset + store
     df_test = pd.merge(df10, df_store_raww, how='left', on='Store')
 
-    # list stores
-    list_stores = [24, 25, 36]
-
     # chose store for prediction
-    df_test = df_test[df_test['Store'].isin(list_stores)]
+    df_test = df_test[df_test['Store'] == store_id]
     
     if not df_test.empty:
         # remove closed days
@@ -80,7 +86,6 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         message = request.get_json()
-        
         chat_id, store_id = parse_message(message)
 
         if store_id != 'error':
@@ -108,5 +113,5 @@ def index():
         return '<h1>Rossmann Telegram Bot</h1>'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=5001, debug=True)
 
