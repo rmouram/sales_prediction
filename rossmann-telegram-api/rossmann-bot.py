@@ -4,6 +4,9 @@ import pandas as pd
 from flask import Flask, request, Response
 
 
+# webhook
+# https://api.telegram.org/bot5085784292:AAGGYbfvb7Shl-ntyj4ABTMJN0oJo_jcKu8/setWebhook?url=https://97c954e8e79429.lhr.life
+
 TOKEN = '5085784292:AAGGYbfvb7Shl-ntyj4ABTMJN0oJo_jcKu8'
 
 def send_message(chat_id, text):
@@ -105,5 +108,5 @@ def index():
         return '<h1>Rossmann Telegram Bot</h1>'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5001)
 
