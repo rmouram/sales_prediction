@@ -28,8 +28,7 @@ Projeto de Regressão
  
 ## Testar aplicação
  Esta aplicação tem por finalidade ser uma maneira fácil de um gerende de vendas por exemplo, consultar os valores preditos pelo modelo. As lojas são identificadas por números entre 1 e 1115. Porém vale lembrar que  algumas lojas não estão no conjunto de testes logo não podem ser obtidos resultados dela.
- 1. Acesse o bot do telegram:
- 1.1 username: @rossmann_rf_bot
+ 1. Acesse o bot do telegram: username: @rossmann_rf_bot
  2. Digite o código da loja a ser consultado o valor de previsão das vendas.(ex: 22)
 
 ## Como instalar
@@ -44,8 +43,8 @@ Projeto de Regressão
 
 
 ## Estado do projeto
-<p> Estou tendo problemas com o Heroku por isso ainda não é possível testar o projeto sem precisar fazer um clone</p>
-<p> Em breve quando solucionar os problemas também haverá um bot no telegram para facilitar o acesso.</p>
+<p>Ciclo 01 do Projeto Concluído</p>
+<p>Em breve tutorial explicativo no Medium.</p>
 <p> Caso haja dúvidas ou problemas enviei um e-mail ou abra uma issue.</p>
 
 ## Autor
