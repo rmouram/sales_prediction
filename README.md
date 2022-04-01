@@ -1,3 +1,5 @@
+![Sales-Forecast-2](https://user-images.githubusercontent.com/28973566/161333971-682a7ee6-2f03-4d9b-97d2-1a8b9f7235f0.jpeg)
+
 # Rossman Sales Prediction
 
 ## Este projeto visa prever numero de vendas de uma rede de farmácias.
@@ -34,26 +36,32 @@ My strategy to solve this challenge was:
 
 **Step 10. Deploy Modelo to Production:** Tornar o modelo público, online, para ser utilizado pela empresa.
 
-# 4. Top 3 Data Insights *Devido se tratar do primeiro ciclo de criação do projeto esta etapa foi adiada.*
+# 4. Top 3 Data Insights:
 
 **Hypothesis 01:**
+Lojas deveriam vender mais ao longo dos anos.
+**False.**
 
-**True/False.**
+![image](https://user-images.githubusercontent.com/28973566/161334401-55b56a07-b0c2-40b0-9bcd-f94a80f280a0.png)
 
 **Hypothesis 02:**
+Lojas com competidores próximos deveriam vender menos.
+**False.**
 
-**True/False.**
+![image](https://user-images.githubusercontent.com/28973566/161334588-1c7b5ace-2f39-43de-810b-a81519bfb94e.png)
 
 **Hypothesis 03:**
+Lojas deveriam vender mais durante o feriado de natal.
+**False.**
 
-**True/False.**
+![image](https://user-images.githubusercontent.com/28973566/161334697-23e12626-4b3e-4d1a-a849-2a413159039b.png)
 
 # 5. Machine Learning Model Applied
  - Foram criados e comparados 4 modelos de machine learning:
-    - K-Nearest Neighbor Classifier
-    - Logistic Regression
-    - XGBoost Classifier
-    - Random Forest Classifier
+    - Lasso	
+    - Linear Regression
+    - XGBoost Regressor
+    - Random Forest 
 
 # 6. Machine Learning Model Performance
 
@@ -68,16 +76,39 @@ My strategy to solve this challenge was:
 
 Após o hyperparameter fine tuning no XGBoost a performance alcançada foi:
 
-| Model Name	      |     MAE	    |    MAPE	  |    RMSE    |
+|       Model       |     MAE	   |   MAPE	  |    RMSE    |
+|-------------------|------------|----------|----------- |
 | XGBoost Regressor	| 666.505452	| 0.096956	| 978.003413 |
 
 # 7. Business Results
+Com as previsões de vendas em mãos, foi calculado os ganhos da empresa no pior e melhor cenário.
+
+|     Scenario	  |      Values      |
+|----------------|------------------|
+| predictions	   | R$274,200,960.00 |
+| worst_scenario	| R$273,453,773.10 |
+| best_scenario	 | R$274,948,139.99 |
+
+O modelo retorna dado um id de loja, o valor de vendas que a loja terá nas 6 semanas seguintes, desta forma:
+"Store number 21 will sell R$222,100.29 in the next 6 weeks"
 
 # 8. Conclusions
+O modelo de machine learning conseguiu de forma satisfatória prever vendas com baixos erros.
 
 # 9. Lessons Learned
+Este é meu primeiro projeto de data science completo, logo todo conhecimento aplicado aqui foi aprendido neste projeto.
 
 # 10. Next Steps to Improve
+- Testar mais modelos de ml.
+- Checar desbalanceamento
+- Testar PCA.
+- Criar mais features
+
+# 11. Deploy
+
+Foi criado um bot no telegram que dado uma entrada de numero de loja, o bot por meio de uma API acessa o heroku onde o modelo está publicado e retorna o valor em vendas daquela loja.
+
+![ds](https://user-images.githubusercontent.com/28973566/161333686-8a239e5c-862a-4ede-8401-d8a5e9707192.png)
 
 # LICENSE
 
