@@ -1,59 +1,84 @@
-# sales_prediction
+# Rossman Sales Prediction
 
-Projeto de Regressão
+## Este projeto visa prever numero de vendas de uma rede de farmácias.
 
-<p> [X] Obtenção dos dados </p>
-<p> [X] Feature Engineering </p>
-<p> [X] Filtragem de variáveis </p>
-<p> [X] Análise Exploratória </p>
-<p> [X] Data Preparation </p>
-<p> [X] Feature selection </p>
-<p> [X] Machine Learning Moddeling </p>
-<p> [X] Hyperparameter Fine Tuning </p>
-<p> [X] Tradução e interpretação do erro </p>
-<p> [X] Deploy do modelo em produção </p>
-<p> [X] Criação do bot no telegram </p>
+#### This project was made by Rômulo Moura.
 
-## Sobre o projeto
-  <p> Este é um projeto de portifólio com a finalidade de demonstrar e aprender habilidades e técnicas referentes a ciência de dados. </p>
-  <p> O projeto visa resolver um problema fictício de uma empresa que precisa saber onde(quais lojas) e como  aplicar o budget anual.
-  Com os dados do Rossman (https://www.kaggle.com/c/rossmann-store-sales) uma rede de farmácias. Após 10 passos do CRISP-DS conseguimos trazer resultados a cerca da previsão de vendas de cada loja em R$, assim o CEO consegue tomar melhores decisões de como irá dividir o budget da empresa.</p>
+# 1. Business Problem.
+O projeto visa resolver um problema fictício de uma empresa que precisa saber onde(quais lojas) e como  aplicar o budget anual.
+Com os dados do Rossman (https://www.kaggle.com/c/rossmann-store-sales) uma rede de farmácias. Após 10 passos do CRISP-DS conseguimos trazer resultados a cerca da previsão de vendas de cada loja em R$, assim o CEO consegue tomar melhores decisões de como irá dividir o budget da empresa.
 
-## Tecnologias
- - Python
- - Sklearn
- - Xgboost
- - Heroku
- - API Telegram
- 
-## Testar aplicação
- Esta aplicação tem por finalidade ser uma maneira fácil de um gerende de vendas por exemplo, consultar os valores preditos pelo modelo. As lojas são identificadas por números entre 1 e 1115. Porém vale lembrar que  algumas lojas não estão no conjunto de testes logo não podem ser obtidos resultados dela.
- 1. Acesse o bot do telegram: username: @rossmann_rf_bot
- 2. Digite o código da loja a ser consultado o valor de previsão das vendas.(ex: 22)
+# 2. Business Assumptions.
 
-## Como instalar
- 1. Crie um ambiente virtual para separar as dependências que serão instaladas.
- 2. Faça o clone para o diretório desejado.
- 3. Em um terminal e com o ambiente virtual ativado faça: pip install requirements.txt.
- 4. Crie uma pasta chamada model
- 5. Digite jupyter-notebook no terminal.
- 6. Ao entrar no arquivo v1.0_store_sales_prediction.ipynb vá em Cell e clique em Run All na aba superior do jupyter.
- 7. Após isso poderá demorar horas para concluir devido aos treinamentos de ML e o fine tuning.
+# 3. Solution Strategy
 
+My strategy to solve this challenge was:
 
+**Step 01. Data Description:** Descrever estatísticamente os dados dos clientes para tentar entender a forma dos dados.
 
-## Estado do projeto
-<p>Ciclo 01 do Projeto Concluído</p>
-<p>Em breve tutorial explicativo no Medium.</p>
-<p> Caso haja dúvidas ou problemas enviei um e-mail ou abra uma issue.</p>
+**Step 02. Feature Engineering:** Criar novas features com base nas já existentes, a fim de melhorar o ranqueamento.
 
-## Autor
-<p>Linkedn: https://github.com/rmouram</p>
-<p>Rômulo Ferreira</p>
-<p>Email: ferreira.moura.maia@gmail.com</p>
-<p>Portfólio: https://rmouram.github.io/portfolio_romulo/</p>
+**Step 03. Data Filtering:** Filtrar dados indesejados, sujos, faltantes, que não agregam ao objetivo.
 
-## Licença
+**Step 04. Exploratory Data Analysis:** Encontrar analisando os dados peculiaridades a cerca dos clientes, na finalidade de entender melhor os clientes e melhorar o resultado.
 
+**Step 05. Data Preparation:** Preparar os dados convertendo a formas mais adequadas que os algoritmos de machine learning possam trabalhar.
 
+**Step 06. Feature Selection:** Selecionar as melhores features, aquelas que irão agregar ao resultado esperado, diminuindo a dimensionalidade.
 
+**Step 07. Machine Learning Modelling:** Criação e treinamento dos modelos que farão o ranqueamento dos clientes.
+
+**Step 08. Hyperparameter Fine Tunning:** Após encontrar o melhor modelo, ajustar os parâmetros para melhorar um pouco a capacidade de ranqueamento do algoritmo.
+
+**Step 09. Convert Model Performance to Business Values:** Analisar como os resultados obtidos impactam o negócio da empresa.
+
+**Step 10. Deploy Modelo to Production:** Tornar o modelo público, online, para ser utilizado pela empresa.
+
+# 4. Top 3 Data Insights *Devido se tratar do primeiro ciclo de criação do projeto esta etapa foi adiada.*
+
+**Hypothesis 01:**
+
+**True/False.**
+
+**Hypothesis 02:**
+
+**True/False.**
+
+**Hypothesis 03:**
+
+**True/False.**
+
+# 5. Machine Learning Model Applied
+ - Foram criados e comparados 4 modelos de machine learning:
+    - K-Nearest Neighbor Classifier
+    - Logistic Regression
+    - XGBoost Classifier
+    - Random Forest Classifier
+
+# 6. Machine Learning Model Performance
+
+|            Model	            |        MAE          |     MAPE          |       RMSE 	       |
+| ------------------------------|---------------------|-------------------|------------------- |
+|   Random Forest		            |  837.68 +/- 218.12  |	0.12 +/- 0.02	    |	1256.33 +/- 318.28 |
+|	  XGBoost Regressor           |	1074.84 +/- 199.67  |	0.15 +/- 0.02     |	1540.63 +/- 278.07 |	
+|	  Linear Regression           |	2081.73 +/- 295.63  |	0.3 +/- 0.02      |	2952.52 +/- 468.37 |
+|	  Lasso	                      | 2116.38 +/- 341.5   |	0.29 +/- 0.01	    |	3057.75 +/- 504.26 |	
+
+- Random Forest conseguiu os melhores valores de MAE e RMSE, porém é um modelo muito pesado, então foi selecionado o XGBoost para presseguir no projeto.
+
+Após o hyperparameter fine tuning no XGBoost a performance alcançada foi:
+
+| Model Name	      |     MAE	    |    MAPE	  |    RMSE    |
+| XGBoost Regressor	| 666.505452	| 0.096956	| 978.003413 |
+
+# 7. Business Results
+
+# 8. Conclusions
+
+# 9. Lessons Learned
+
+# 10. Next Steps to Improve
+
+# LICENSE
+
+# All Rights Reserved - Comunidade DS 2021
